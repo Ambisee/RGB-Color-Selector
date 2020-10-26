@@ -64,8 +64,8 @@ def main():
     result = font2.render('Result : ', True, (abs(cd.red - 255), abs(cd.green - 255), abs(cd.blue - 255)))
     notif = pygame.font.Font(os.path.abspath("Fonts/KronaOne-Regular.ttf"), 22).render("Value Copied", True, (0,0,0))
     value = font1.render("Value", True, (208, 0, 212))
-    text = f"({cd.red}, {cd.green}, {cd.blue})"
-    _value = createValue(text)
+    text = f"{cd.red}, {cd.green}, {cd.blue}"
+    _value = createValue("(" + text + ")")
 
     while True:
         clock.tick(FPS)
@@ -117,8 +117,8 @@ def main():
 
         cd.update_color(cs[0].color[cs[0].color_in], cs[1].color[cs[1].color_in], cs[2].color[cs[2].color_in])
         result = font2.render('Result : ', True, (abs(cd.red - 255), abs(cd.green - 255), abs(cd.blue - 255)))
-        text = f"({cd.red}, {cd.green}, {cd.blue})"
-        _value = createValue(text)
+        text = f"{cd.red}, {cd.green}, {cd.blue}"
+        _value = createValue("(" + text + ")")
 
         redraw_window(screen, cd, cp, cs, title, result, value, _value)
         ingroup.draw(screen)
